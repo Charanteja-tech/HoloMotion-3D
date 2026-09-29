@@ -12,7 +12,7 @@ export default defineConfig({
   workers: 1,
   reporter: [['list'], ['html', { open: 'never', outputFolder: 'playwright-report' }]],
   use: {
-    baseURL: 'http://localhost:5173',
+    baseURL: 'http://localhost:5174',
     viewport: { width: 1600, height: 900 },
     deviceScaleFactor: 1,
     permissions: ['camera'],
@@ -21,5 +21,5 @@ export default defineConfig({
     },
     trace: 'retain-on-failure',
   },
-  webServer: { command: 'node server.mjs 5173', url: 'http://localhost:5173', reuseExistingServer: true, timeout: 30_000 },
+  webServer: { command: 'npm run start -- --port 5174 --strictPort', url: 'http://localhost:5174', reuseExistingServer: true, timeout: 30_000 },
 });

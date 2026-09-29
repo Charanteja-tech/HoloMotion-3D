@@ -4,19 +4,28 @@
   "description": "Gesture-controlled 3D wonders, engines and cars made of glowing GPU particles (MediaPipe + WebGL2).",
   "type": "module",
   "engines": {
-    "node": ">=18"
+    "node": "22.x"
   },
   "scripts": {
-    "start": "node server.mjs",
+    "start": "vite --host 0.0.0.0",
+    "build": "vite build && node scripts/copy-assets.mjs",
+    "preview": "vite preview --host 0.0.0.0",
     "test": "playwright test",
     "test:report": "playwright show-report"
   },
-  "keywords": ["mediapipe", "webgl2", "particles", "hand-tracking", "gestures"],
+  "keywords": [
+    "mediapipe",
+    "webgl2",
+    "particles",
+    "hand-tracking",
+    "gestures"
+  ],
   "license": "MIT",
   "dependencies": {
     "@mediapipe/tasks-vision": "^1.0.1"
   },
   "devDependencies": {
-    "@playwright/test": "^1.63.0"
+    "@playwright/test": "^1.63.0",
+    "vite": "^8.3.1"
   }
 }
